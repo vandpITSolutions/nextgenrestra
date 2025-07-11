@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/config";
-import "./HomePage.css"; // Optional: use Tailwind or CSS Module if preferred
-
+import "./HomePage.css";
+import Navbar from "./Navbar"; // Optional: use Tailwind or CSS Module if preferred
+import Footer from "./Footer"
 const HomePage = () => {
   const navigate = useNavigate();
 
@@ -14,6 +15,7 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
+      <Navbar />
       <header className="hero">
         <h1>Welcome to Delizio</h1>
         <p>Your favorite spot for delicious cuisine.</p>
@@ -36,6 +38,7 @@ const HomePage = () => {
         <p>📍 123 Foodie Street, Flavor Town</p>
         <p>📞 +91-9876543210 | ✉️ contact@delizio.com</p>
       </footer>
+      <Footer />
     </div>
   );
 };
