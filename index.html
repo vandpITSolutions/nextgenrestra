@@ -1,11 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DelishBite - Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="bg-white text-gray-800 scroll-smooth">
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold text-red-600">DelishBite</h1>
+            <nav class="space-x-6 hidden md:block">
+                <a href="#" class="hover:text-red-600">Home</a>
+                <a href="#menu" class="hover:text-red-600">Menu</a>
+                <a href="#about" class="hover:text-red-600">About</a>
+                <a href="#contact" class="hover:text-red-600">Contact</a>
+            </nav>
+            <!-- Mobile Button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg px-4 py-4 space-y-3">
+            <a href="#" class="block text-gray-800 hover:text-red-600">Home</a>
+            <a href="#menu" class="block text-gray-800 hover:text-red-600">Menu</a>
+            <a href="#about" class="block text-gray-800 hover:text-red-600">About</a>
+            <a href="#contact" class="block text-gray-800 hover:text-red-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-cover bg-center h-screen text-white flex items-center justify-center relative"
+        style="background-image: url('./one.jpg');"">
+        <div class="bg-black bg-opacity-60 p-10 rounded text-center max-w-2xl">
+            <h2 class="text-5xl font-bold mb-4">Welcome to DelishBite</h2>
+            <p class="text-xl mb-6">A taste that keeps you coming back!</p>
+            <a href="#menu" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full transition">Explore
+                Menu</a>
+        </div>
+    </section>
+
+    <!-- Featured Dishes -->
+    <section class="py-16 px-6 bg-gray-100" id="featured">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-3xl font-semibold text-red-600 mb-8">Featured Dishes</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="./two.jpg" alt="Pasta" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-xl font-semibold mb-2">Creamy Alfredo Pasta</h4>
+                        <p class="text-gray-600">A rich and creamy delight topped with parmesan.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="./three.jpg" alt="Pizza" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-xl font-semibold mb-2">Woodfire Margherita</h4>
+                        <p class="text-gray-600">Fresh basil, mozzarella, and handmade dough.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="./four.jpg" alt="Burger"
+                        class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-xl font-semibold mb-2">Classic Burger</h4>
+                        <p class="text-gray-600">Juicy, grilled to perfection with fresh toppings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 px-6" id="about">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+            <img src="./five.jpg" alt="Chef"
+                class="rounded-lg shadow-md w-full md:w-1/2">
+            <div class="md:w-1/2">
+                <h3 class="text-3xl font-bold text-red-600 mb-4">About Us</h3>
+                <p class="text-gray-700 mb-4">
+                    At DelishBite, we're passionate about serving food that tells a story. Our chefs handcraft every
+                    meal with fresh, locally sourced ingredients, ensuring quality and taste in every bite.
+                </p>
+                <p class="text-gray-700">We blend tradition with innovation to bring you a memorable dining experience.
+                    Whether you're in for a quick lunch or a family dinner, we’ve got something for everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-16 px-6 bg-gray-100" id="menu">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-3xl font-semibold text-red-600 mb-10">Our Menu</h3>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div>
+                    <h4 class="text-xl font-bold mb-2">Starters</h4>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>Garlic Bread - ₹120</li>
+                        <li>Cheesy Nachos - ₹150</li>
+                        <li>Spicy Wings - ₹180</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2">Main Course</h4>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>Paneer Butter Masala - ₹250</li>
+                        <li>Chicken Biryani - ₹280</li>
+                        <li>Grilled Fish - ₹350</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 px-6" id="testimonials">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-semibold text-red-600 mb-8">What Our Customers Say</h3>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <p class="italic text-gray-700 mb-4">"Absolutely delicious! The pasta was creamy and flavorful. Will
+                    visit again."</p>
+                <h4 class="font-bold text-gray-800">– Priya Sharma</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 px-6 bg-gray-100" id="contact">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl font-semibold text-red-600 mb-6 text-center">Contact Us</h3>
+            <div class="grid md:grid-cols-2 gap-10">
+                <form class="space-y-4">
+                    <input type="text" placeholder="Your Name" class="w-full border border-gray-300 p-3 rounded" />
+                    <input type="email" placeholder="Your Email" class="w-full border border-gray-300 p-3 rounded" />
+                    <textarea placeholder="Your Message" rows="5"
+                        class="w-full border border-gray-300 p-3 rounded"></textarea>
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded">Send Message</button>
+                </form>
+                <div>
+                    <p class="mb-2"><strong>Address:</strong> 123 Foodie Street, Mumbai, India</p>
+                    <p class="mb-2"><strong>Phone:</strong> +91 98765 43210</p>
+                    <p class="mb-2"><strong>Email:</strong> contact@delishbite.com</p>
+                    <iframe class="mt-4 w-full h-64 rounded"
+                        src="https://maps.google.com/maps?q=restaurant&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-6 text-center text-gray-600">
+        <p>&copy; 2025 DelishBite. All rights reserved.</p>
+        <div class="mt-2 space-x-4 text-red-600">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
 </body>
+
 </html>
